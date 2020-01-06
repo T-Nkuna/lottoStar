@@ -1,0 +1,10 @@
+.lotto-star-button
+{
+
+    background: linear-gradient(180deg, #5C006A 0%, #44034F 100%);
+    border: 2px solid #FFDD00;
+    box-sizing: border-box;
+    border-radius: 30px;
+    padding:1em;
+    color:#FFDD00
+}
