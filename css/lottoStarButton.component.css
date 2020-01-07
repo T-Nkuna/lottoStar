@@ -6,5 +6,6 @@
     box-sizing: border-box;
     border-radius: 30px;
     padding:1em;
-    color:#FFDD00
+    color:#FFDD00;
+    cursor:pointer;
 }

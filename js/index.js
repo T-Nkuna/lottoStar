@@ -1,7 +1,7 @@
 import LottoStarForm from "./lottoStarComponents/LottoStarForm.component.js";
 import LottoStarButton from "./lottoStarComponents/lottoStarButton.component.js";
-
-let lsForm = new LottoStarForm("NAME ONE LOTTERY GAME YOU CAN BET ON AT LOTTOSTAR.CO.ZA",[
+import DigitBlocks from "./lottoStarComponents/digitBlocks.component.js";
+let lsForm = new LottoStarForm("NAME ONE LOTTERY GAME YOU CAN BET ON AT <span class='lotto-star-gold'>LOTTOSTAR.CO.ZA</span>",[
     {
         tagName:"input",
         type:"text",
@@ -46,7 +46,7 @@ let lsForm2 = new LottoStarForm("TELL US WHO YOU ARE",[
         tagName:"input",
         type:"checkbox",
         placeholder:"",
-        name:"Accept TS & C'S"
+        name:"Accept <span class='lotto-star-gold'>TS & C'S</span>"
     }
 ]);
 
@@ -66,11 +66,31 @@ let headerInfo = document.createElement("div");
 headerInfo.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in euismod arcu. Vivamus sit amet lacinia purus. Nulla a turpis ipsum. Maecenas ante erat, iaculis ac hendrerit non, accumsan quis neque. Nullam et congue quam. Quisque luctus egestas gravida. Quisque maximus, diam non vehicula imperdiet, nunc purus dapibus est, eu efficitur orci dolor eu turpis.";
 headerInfo.classList.add("landing-page-header");
 
-let landingPage = document.querySelector("#landing");
-let landingPageButtonContainer = document.createElement("div");
+let landingPage =  document.querySelector("#landing");
+let landingPageMainContent1 = document.createElement("div");
+let landingPageMainContent2 = document.createElement("div");
+let landingPageMainButtonContainer = document.createElement("div");
 
-landingPageButtonContainer.classList.add("lotto-star-container");
-lsSubmitFormButton.render(landingPageButtonContainer);
-landingPage.appendChild(headerInfo);
-formContainers.forEach(formContainer=>landingPage.appendChild(formContainer));
-landingPage.appendChild(landingPageButtonContainer);
+landingPageMainButtonContainer.classList.add("lotto-star-container");
+lsSubmitFormButton.render(landingPageMainButtonContainer);
+landingPageMainContent1.appendChild(headerInfo);
+formContainers.forEach(formContainer=>landingPageMainContent1.appendChild(formContainer));
+landingPageMainContent1.appendChild(landingPageMainButtonContainer);
+landingPageMainContent1.classList.add("lotto-star-main-content-container");
+landingPageMainContent2.classList.add(
+    "lotto-star-main-content-container",
+    "lotto-star-dark-shadow",
+    "lotto-star-main-content-container-bottom"
+);
+landingPage.appendChild(landingPageMainContent1);
+landingPage.appendChild(landingPageMainContent2);
+
+let num = "R"+Math.floor(Math.random()*1000000);
+let digitBlocks = new DigitBlocks(num);
+let digitContainer = document.createElement("div");
+let charityCircle = document.createElement("div");
+digitContainer.classList.add("charity-digit-container");
+charityCircle.classList.add("lotto-star-charity-circle");
+landingPageMainContent2.append(charityCircle);
+landingPageMainContent2.append(digitContainer);
+digitBlocks.render(digitContainer);

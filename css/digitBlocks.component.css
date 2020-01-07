@@ -1,0 +1,22 @@
+.lt-digit-container
+{
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 0.5em;
+    grid-row-gap: 4px;
+    
+}
+
+.lt-digit-block
+{
+    grid-row:1/span 2;
+    font-size:2em;
+    text-align:center;
+    width:2em;
+    height:1em;
+    box-shadow:0 0 2px #32023A;
+    border:1px solid #32023A;
+    border-radius:4px;
+    
+    
+}

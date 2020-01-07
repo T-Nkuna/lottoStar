@@ -19,7 +19,7 @@
     font-size:0.83em;
 }
 
-.lt-form-title div
+.lt-form-title div >hr
 {
     grid-column: 2/span 1;
     background: rgba(255, 255, 255, 0.75);
