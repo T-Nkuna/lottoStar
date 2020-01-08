@@ -1,8 +1,9 @@
 import LottoStarForm from "./LottoStarForm.component.js";
 import LottoStarButton from "./lottoStarButton.component.js";
 import DigitBlocks from "./digitBlocks.component.js";
+import formEventHandler from "../lottoStarEventHandlers/lottoStarMain.handler.js"
 
-export default class LottoStartMain
+export default class LottoStarMain
 {
     constructor(){
 
@@ -58,10 +59,10 @@ export default class LottoStartMain
             }
         ]);
         
-        let lsSubmitFormButton = new LottoStarButton("SUBMIT NOW");
-        let learnMoreButton = new LottoStarButton("Learn More");
+        let lsSubmitFormButton = new LottoStarButton("SUBMIT NOW",{backgroundColor:"#5C006A"});
+        let learnMoreButton = new LottoStarButton("Learn More",{backgroundColor:"#5C006A"});
         lsSubmitFormButton.onClick((event)=>{
-           alert("TO DO");
+           formEventHandler.onFormSubmit(event,landingPageMainContent1);
         });
         
         
